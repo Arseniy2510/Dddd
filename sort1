@@ -1,0 +1,18 @@
+from random import randint
+A=[randint(10,100) for i in range(10)]
+print(*A)
+def mimimi(x):
+    summ=0
+    while x>0:
+        summ+=x%10
+        x//10
+        return summ
+for i in range(len(A)-1):
+    k=False
+    for j in range(len(A)-2,i-1,-1):
+        if mimimi(A[j])<mimimi(A[j+1]):
+            A[j],A[j+1]=A[j+1],A[j]
+            k=True
+        else:
+            break
+print(*A)
