@@ -1,3 +1,28 @@
+"""
+from random import randint
+A=[randint(10,100) for i in range(10)]
+print(*A)
+for i in range(len(A)-1):
+    for j in range(len(A)-i-1):
+        if A[j]>A[j+1]:
+            A[j+1],A[j]=A[j],A[j+1]
+print(*A)
+"""
+"""
+from random import randint
+A=[randint(10,100) for i in range(10)]
+print(*A)
+for i in range(len(A)-1):
+    k=False
+    for j in range(len(A)-2,i-1,-1):
+        if A[j+1]<A[j]:
+            A[j],A[j+1]=A[j+1],A[j]
+            k=True
+        else:
+            break
+print(*A)
+"""
+"""
 from random import randint
 A=[randint(10,100) for i in range(10)]
 print(*A)
@@ -16,3 +41,4 @@ for i in range(len(A)-1):
         else:
             break
 print(*A)
+"""
