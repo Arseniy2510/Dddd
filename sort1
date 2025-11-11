@@ -24,21 +24,24 @@ print(*A)
 """
 """
 from random import randint
-A=[randint(10,100) for i in range(10)]
+A = [randint(100,999) for i in range(3)]
+print("Массив A:")
 print(*A)
-def mimimi(x):
-    summ=0
-    while x>0:
-        summ+=x%10
-        x//10
-        return summ
-for i in range(len(A)-1):
-    k=False
-    for j in range(len(A)-2,i-1,-1):
-        if mimimi(A[j])<mimimi(A[j+1]):
-            A[j],A[j+1]=A[j+1],A[j]
-            k=True
-        else:
-            break
+def zxc(x):
+        while x>0:
+            summ = 0
+            summ+=x%10
+            x//10
+            return(summ)
+for i in range(len(A)):
+    swapped = False
+    for j in range(0,len(A)-i-1):
+        if zxc(A[j]) < zxc(A[j+1]):
+            A[j], A[j + 1] = A[j + 1], A[j]
+            swapped = True
+    if not swapped:
+        break
+print("После сортировки:")
 print(*A)
+
 """
