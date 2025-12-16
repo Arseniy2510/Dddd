@@ -1,0 +1,10 @@
+y=6
+z=y
+def PrintPasTriangle(rows):
+    global z
+    A = [1]
+    for i in range(rows):
+        print(z*" ", *A)
+        z-=1
+        A = [sum(x) for x in zip([0] + A, A + [0])]
+PrintPasTriangle(y)
